@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://tppr6ipnr0pf"]
+
+[ext_resource type="Script" uid="uid://bmqwkomrx4t0f" path="res://assets/scripts/components/logMessage.cs" id="1_shbry"]
+[ext_resource type="FontFile" uid="uid://suh5ym7srtd2" path="res://assets/fonts/seal.ttf" id="1_uhplk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tqhjj"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.64705884)
+
+[node name="LogItem" type="PanelContainer" unique_id=517263291]
+custom_maximum_size = Vector2(500, -1)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -17.0
+offset_right = 58.0
+grow_vertical = 0
+size_flags_horizontal = 2
+size_flags_vertical = 10
+theme_override_styles/panel = SubResource("StyleBoxFlat_tqhjj")
+script = ExtResource("1_shbry")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=487804977]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("1_uhplk")
+theme_override_fonts/bold_font = ExtResource("1_uhplk")
+theme_override_fonts/bold_italics_font = ExtResource("1_uhplk")
+theme_override_fonts/italics_font = ExtResource("1_uhplk")
+theme_override_fonts/mono_font = ExtResource("1_uhplk")
+theme_override_font_sizes/normal_font_size = 12
+theme_override_font_sizes/bold_font_size = 12
+theme_override_font_sizes/bold_italics_font_size = 12
+theme_override_font_sizes/italics_font_size = 12
+theme_override_font_sizes/mono_font_size = 12
+text = "Message"
+fit_content = true
+scroll_active = false
+autowrap_mode = 1

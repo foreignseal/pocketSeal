@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dg00pbkemwj5f"]
+
+[ext_resource type="Script" uid="uid://bkqjg5tk71k2s" path="res://assets/scripts/global/debugLog.cs" id="1_6kljm"]
+
+[node name="debugLog" type="Node" unique_id=1811416715]
+script = ExtResource("1_6kljm")

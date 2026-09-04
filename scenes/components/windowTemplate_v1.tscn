@@ -1,0 +1,145 @@
+[gd_scene format=3 uid="uid://wy1atvjlfsrt"]
+
+[ext_resource type="Texture2D" uid="uid://lgbporjdmul0" path="res://assets/textures/generic/windowStyle_v1/top_corner.png" id="1_ok16j"]
+[ext_resource type="Texture2D" uid="uid://v3av54alal28" path="res://assets/textures/generic/windowStyle_v1/bottom_corner.png" id="2_11qd8"]
+[ext_resource type="Texture2D" uid="uid://bdv4xkqhh047p" path="res://assets/textures/generic/windowStyle_v1/bottom.png" id="3_y5ahp"]
+[ext_resource type="Texture2D" uid="uid://bqyh5x00uu5e5" path="res://assets/textures/generic/windowStyle_v1/top.png" id="4_v37ei"]
+[ext_resource type="Texture2D" uid="uid://dba6ahvpm43kk" path="res://assets/textures/generic/windowStyle_v1/side.png" id="5_y5ahp"]
+
+[node name="WindowTemplateV1" type="Control" unique_id=1197849922]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1397873359]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.83137256, 0.90588236, 0.87058824, 1)
+
+[node name="Top_L" type="TextureRect" parent="." unique_id=281606760]
+texture_filter = 1
+custom_minimum_size = Vector2(20, 20)
+custom_maximum_size = Vector2(20, 20)
+layout_mode = 1
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("1_ok16j")
+
+[node name="Top_R" type="TextureRect" parent="." unique_id=2050606563]
+texture_filter = 1
+custom_minimum_size = Vector2(20, 20)
+custom_maximum_size = Vector2(20, 20)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+scale = Vector2(-1, 1)
+texture = ExtResource("1_ok16j")
+
+[node name="Bot_R" type="TextureRect" parent="." unique_id=2063534394]
+texture_filter = 1
+custom_minimum_size = Vector2(20, 20)
+custom_maximum_size = Vector2(20, 20)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -20.0
+offset_right = 20.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(-1, 1)
+texture = ExtResource("2_11qd8")
+
+[node name="Bot_L" type="TextureRect" parent="." unique_id=341071735]
+texture_filter = 1
+custom_minimum_size = Vector2(20, 20)
+custom_maximum_size = Vector2(20, 20)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -20.0
+offset_right = 20.0
+grow_vertical = 0
+texture = ExtResource("2_11qd8")
+
+[node name="Bottom" type="TextureRect" parent="." unique_id=1266354334]
+texture_filter = 1
+custom_minimum_size = Vector2(20, 20)
+custom_maximum_size = Vector2(-1, 20)
+propagate_maximum_size = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -20.0
+offset_right = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("3_y5ahp")
+
+[node name="Top" type="TextureRect" parent="." unique_id=655216093]
+texture_filter = 1
+custom_minimum_size = Vector2(20, 20)
+custom_maximum_size = Vector2(-1, 20)
+propagate_maximum_size = true
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 20.0
+offset_right = -20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+texture = ExtResource("4_v37ei")
+
+[node name="Left" type="TextureRect" parent="." unique_id=1349130968]
+texture_filter = 1
+custom_minimum_size = Vector2(20, 20)
+custom_maximum_size = Vector2(20, -1)
+propagate_maximum_size = true
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_top = 20.0
+offset_right = 20.0
+offset_bottom = -20.0
+grow_vertical = 2
+texture = ExtResource("5_y5ahp")
+
+[node name="Right" type="TextureRect" parent="." unique_id=701597636]
+texture_filter = 1
+custom_minimum_size = Vector2(20, 20)
+custom_maximum_size = Vector2(20, -1)
+propagate_maximum_size = true
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 20.013176
+offset_right = 20.0
+offset_bottom = -20.013153
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(-1, 1)
+texture = ExtResource("5_y5ahp")

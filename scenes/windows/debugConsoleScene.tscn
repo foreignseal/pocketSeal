@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dubdl8cymqtj4"]
+
+[ext_resource type="Script" uid="uid://fw33x3tll7st" path="res://assets/scripts/components/debugConsole.cs" id="1_yxlcp"]
+[ext_resource type="PackedScene" uid="uid://tppr6ipnr0pf" path="res://scenes/components/logItem.tscn" id="2_o0shr"]
+
+[node name="DebugLog" type="VBoxContainer" unique_id=1441447469]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 2
+size_flags_vertical = 10
+script = ExtResource("1_yxlcp")
+LogMessageScene = ExtResource("2_o0shr")

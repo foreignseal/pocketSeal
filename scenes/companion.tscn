@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://b4qd7q7goqc4o"]
+
+[ext_resource type="Texture2D" uid="uid://3onhtd54ol8r" path="res://assets/textures/placeholder/idle.png" id="1_0ewvi"]
+[ext_resource type="Script" uid="uid://bq24yiax5wmvu" path="res://assets/scripts/companionManager.cs" id="1_y6mwj"]
+
+[node name="Companion" type="Control" unique_id=1836885136]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y6mwj")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=798301125]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_0ewvi")
+expand_mode = 2
