@@ -8,7 +8,8 @@ public partial class debugLog : Node
     public static debugLog Instance { get; private set; }
     public static bool IsDebugEnabled { get; set; } = true;
 
-    private static readonly PackedScene ConsoleScene = GD.Load<PackedScene>("res://scenes/windows/debugConsoleScene.tscn");
+    private static readonly PackedScene ConsoleScene = 
+        GD.Load<PackedScene>("res://scenes/windows/debugConsoleScene.tscn");
 
     public static event Action<string, double, double> OnLogMessage;
     private static readonly List<(string msg, double life, double fade)> _backlog = new();
@@ -26,15 +27,15 @@ public partial class debugLog : Node
     private static extern bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int X, int Y, int cx, int cy, uint uFlags);
 
     private const int GWL_EXSTYLE = -20;
-    private const long WS_EX_TOOLWINDOW   = 0x00000080L; // Hides from taskbar
-    private const long WS_EX_APPWINDOW    = 0x00040000L; // App window style (remove)
-    private const long WS_EX_TRANSPARENT  = 0x00000020L; // Mouse click-through
-    private const long WS_EX_LAYERED      = 0x00080000L; // REQUIRED for WS_EX_TRANSPARENT to work
+    private const long WS_EX_TOOLWINDOW   = 0x00000080L;
+    private const long WS_EX_APPWINDOW    = 0x00040000L;
+    private const long WS_EX_TRANSPARENT  = 0x00000020L;
+    private const long WS_EX_LAYERED      = 0x00080000L;
 
     private const uint SWP_NOMOVE       = 0x0002;
     private const uint SWP_NOSIZE       = 0x0001;
     private const uint SWP_NOZORDER     = 0x0004;
-    private const uint SWP_FRAMECHANGED = 0x0020; // Forces Windows to apply style changes immediately
+    private const uint SWP_FRAMECHANGED = 0x0020;
 
     public override void _EnterTree()
     {
@@ -84,7 +85,7 @@ public partial class debugLog : Node
     {
         if (ConsoleScene == null)
         {
-            GD.PrintErr("debugLog: Could not load debugConsole.tscn! Check the res:// path.");
+            GD.PrintErr("debugLog: Could not load debugConsoleScene.tscn! Check the res:// path.");
             return;
         }
 
@@ -104,18 +105,17 @@ public partial class debugLog : Node
         };
 
         Control consoleUi = ConsoleScene.Instantiate<Control>();
-        consoleUi.SetAnchorsPreset(Control.LayoutPreset.FullRect);
         consoleUi.MouseFilter = Control.MouseFilterEnum.Ignore;
 
         _debugWindow.AddChild(consoleUi);
         GetTree().Root.AddChild(_debugWindow);
 
-        // Screen positioning: Bottom-Left corner
+        // Positioning: Safe margin from the screen boundary
         int currentScreen = DisplayServer.WindowGetCurrentScreen();
         Rect2I screenRect = DisplayServer.ScreenGetUsableRect(currentScreen);
 
-        int marginX = 5;
-        int marginY = 5;
+        int marginX = 30; // Gives clearance so characters don't get cut off on the left
+        int marginY = 30; // Clearance above Windows taskbar
 
         int x = screenRect.Position.X + marginX;
         int y = screenRect.Position.Y + screenRect.Size.Y - _debugWindow.Size.Y - marginY;
@@ -141,15 +141,11 @@ public partial class debugLog : Node
         {
             long style = GetWindowLongPtr(hWnd, GWL_EXSTYLE).ToInt64();
 
-            // 1. Remove taskbar style
             style &= ~WS_EX_APPWINDOW;
-
-            // 2. Add tool window, layered, and transparent (click-through) flags
             style |= WS_EX_TOOLWINDOW | WS_EX_LAYERED | WS_EX_TRANSPARENT;
 
             SetWindowLongPtr(hWnd, GWL_EXSTYLE, new IntPtr(style));
 
-            // 3. Force Windows to redraw frame and re-evaluate hit tests
             SetWindowPos(hWnd, IntPtr.Zero, 0, 0, 0, 0, 
                 SWP_NOMOVE | SWP_NOSIZE | SWP_NOZORDER | SWP_FRAMECHANGED);
         }

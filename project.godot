@@ -25,6 +25,7 @@ config/icon="res://assets/textures/icon.svg"
 
 windowSetup="*uid://cwgw23fagjegd"
 debugLog="*uid://dg00pbkemwj5f"
+FirstScreen="*uid://e3w70s560p3c"
 
 [display]
 
@@ -44,6 +45,11 @@ window/per_pixel_transparency/allowed=true
 [dotnet]
 
 project/assembly_name="pocketSeal"
+
+[gui]
+
+theme/custom="uid://d3ihin75lho5g"
+theme/custom_font="uid://suh5ym7srtd2"
 
 [physics]
 

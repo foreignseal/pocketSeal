@@ -5,8 +5,21 @@
 [ext_resource type="Texture2D" uid="uid://bdv4xkqhh047p" path="res://assets/textures/generic/windowStyle_v1/bottom.png" id="3_y5ahp"]
 [ext_resource type="Texture2D" uid="uid://bqyh5x00uu5e5" path="res://assets/textures/generic/windowStyle_v1/top.png" id="4_v37ei"]
 [ext_resource type="Texture2D" uid="uid://dba6ahvpm43kk" path="res://assets/textures/generic/windowStyle_v1/side.png" id="5_y5ahp"]
+[ext_resource type="Texture2D" uid="uid://cn2htx167wq0h" path="res://assets/textures/buttons/closeWindow/closebutton.png" id="6_v37ei"]
+[ext_resource type="Texture2D" uid="uid://r6r0f3e73qsl" path="res://assets/textures/buttons/closeWindow/closebutton_click.png" id="7_1flhs"]
+[ext_resource type="Texture2D" uid="uid://g1m87hcdlyib" path="res://assets/textures/buttons/closeWindow/closebutton_hover.png" id="8_ayp8w"]
+[ext_resource type="Script" uid="uid://lxafhwpdr5px" path="res://assets/scripts/components/CloseWindowButton.cs" id="9_ayp8w"]
 
-[node name="WindowTemplateV1" type="Control" unique_id=1197849922]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tqhjj"]
+texture = ExtResource("6_v37ei")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_13lxo"]
+texture = ExtResource("7_1flhs")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1flhs"]
+texture = ExtResource("8_ayp8w")
+
+[node name="WindowTemplate" type="Control" unique_id=1197849922]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 3
 anchors_preset = 15
@@ -20,49 +33,47 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 20.0
-offset_top = 20.0
-offset_right = -20.0
-offset_bottom = -20.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.83137256, 0.90588236, 0.87058824, 1)
 
 [node name="Top_L" type="TextureRect" parent="." unique_id=281606760]
 texture_filter = 1
-custom_minimum_size = Vector2(20, 20)
 custom_maximum_size = Vector2(20, 20)
 layout_mode = 1
-offset_right = 20.0
-offset_bottom = 20.0
+offset_right = 10.0
+offset_bottom = 10.0
 texture = ExtResource("1_ok16j")
 
 [node name="Top_R" type="TextureRect" parent="." unique_id=2050606563]
 texture_filter = 1
-custom_minimum_size = Vector2(20, 20)
 custom_maximum_size = Vector2(20, 20)
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_right = 10.0
+offset_bottom = 10.0
 grow_horizontal = 0
 scale = Vector2(-1, 1)
 texture = ExtResource("1_ok16j")
 
 [node name="Bot_R" type="TextureRect" parent="." unique_id=2063534394]
 texture_filter = 1
-custom_minimum_size = Vector2(20, 20)
-custom_maximum_size = Vector2(20, 20)
+custom_minimum_size = Vector2(10, 10)
+custom_maximum_size = Vector2(10, 10)
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -20.0
-offset_right = 20.0
+offset_top = -10.0
+offset_right = 10.0
 grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(-1, 1)
@@ -70,8 +81,8 @@ texture = ExtResource("2_11qd8")
 
 [node name="Bot_L" type="TextureRect" parent="." unique_id=341071735]
 texture_filter = 1
-custom_minimum_size = Vector2(20, 20)
-custom_maximum_size = Vector2(20, 20)
+custom_minimum_size = Vector2(10, 10)
+custom_maximum_size = Vector2(10, 10)
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -83,63 +94,169 @@ texture = ExtResource("2_11qd8")
 
 [node name="Bottom" type="TextureRect" parent="." unique_id=1266354334]
 texture_filter = 1
-custom_minimum_size = Vector2(20, 20)
-custom_maximum_size = Vector2(-1, 20)
+custom_minimum_size = Vector2(10, 10)
+custom_maximum_size = Vector2(-1, 10)
 propagate_maximum_size = true
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 20.0
-offset_top = -20.0
-offset_right = -20.0
+offset_left = 10.0
+offset_top = -10.0
+offset_right = -10.0
 grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("3_y5ahp")
 
 [node name="Top" type="TextureRect" parent="." unique_id=655216093]
 texture_filter = 1
-custom_minimum_size = Vector2(20, 20)
-custom_maximum_size = Vector2(-1, 20)
+custom_minimum_size = Vector2(20, 10)
+custom_maximum_size = Vector2(-1, 10)
 propagate_maximum_size = true
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_left = 20.0
-offset_right = -20.0
-offset_bottom = 20.0
+offset_left = 10.0
+offset_right = -10.0
+offset_bottom = 10.0
 grow_horizontal = 2
 texture = ExtResource("4_v37ei")
 
 [node name="Left" type="TextureRect" parent="." unique_id=1349130968]
 texture_filter = 1
-custom_minimum_size = Vector2(20, 20)
-custom_maximum_size = Vector2(20, -1)
+custom_minimum_size = Vector2(10, 10)
+custom_maximum_size = Vector2(10, -1)
 propagate_maximum_size = true
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_top = 20.0
-offset_right = 20.0
-offset_bottom = -20.0
+offset_top = 10.0
+offset_right = 10.0
+offset_bottom = -10.0
 grow_vertical = 2
 texture = ExtResource("5_y5ahp")
 
 [node name="Right" type="TextureRect" parent="." unique_id=701597636]
 texture_filter = 1
-custom_minimum_size = Vector2(20, 20)
-custom_maximum_size = Vector2(20, -1)
+custom_minimum_size = Vector2(10, 10)
+custom_maximum_size = Vector2(10, -1)
 propagate_maximum_size = true
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 20.013176
-offset_right = 20.0
-offset_bottom = -20.013153
+offset_top = 9.94109
+offset_right = 10.0
+offset_bottom = -10.058899
 grow_horizontal = 0
 grow_vertical = 2
 scale = Vector2(-1, 1)
 texture = ExtResource("5_y5ahp")
+
+[node name="Title Bar" type="Control" parent="." unique_id=107779476]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+
+[node name="ColorRect" type="ColorRect" parent="Title Bar" unique_id=1139891646]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = 24.0
+grow_horizontal = 2
+color = Color(0.18431373, 0.2, 0.2, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Title Bar/ColorRect" unique_id=1279497645]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 2.0
+grow_horizontal = 2
+color = Color(0.4509804, 0.45882353, 0.45882353, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Title Bar/ColorRect" unique_id=990489339]
+layout_mode = 1
+offset_right = 2.0
+offset_bottom = 6.0
+color = Color(0.4509804, 0.45882353, 0.45882353, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Title Bar/ColorRect" unique_id=219225426]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -2.0
+offset_bottom = 6.0
+grow_horizontal = 0
+color = Color(0.4509804, 0.45882353, 0.45882353, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Title Bar/ColorRect" unique_id=1231506686]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 12.0
+offset_top = -13.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 16
+text = "Window Title"
+scroll_active = false
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Title Bar/ColorRect" unique_id=368813724]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -22.0
+offset_top = -9.0
+offset_right = -4.0
+offset_bottom = 9.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_tqhjj")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_13lxo")
+theme_override_styles/hover = SubResource("StyleBoxTexture_1flhs")
+script = ExtResource("9_ayp8w")
+
+[node name="ColorRect3" type="ColorRect" parent="Title Bar" unique_id=1604221984]
+layout_mode = 1
+offset_left = -2.0
+offset_top = -2.0
+color = Color(0.050980393, 0.05490196, 0.050980393, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Title Bar" unique_id=412779625]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_top = -2.0
+offset_right = 2.0
+grow_horizontal = 0
+color = Color(0.050980393, 0.05490196, 0.050980393, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Title Bar" unique_id=221220226]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -2.0
+offset_top = 22.0
+offset_right = 2.0
+offset_bottom = 24.0
+grow_horizontal = 2
+color = Color(0.050980393, 0.05490196, 0.050980393, 1)

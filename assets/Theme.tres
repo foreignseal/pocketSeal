@@ -1,0 +1,44 @@
+[gd_resource type="Theme" format=3 uid="uid://d3ihin75lho5g"]
+
+[ext_resource type="Texture2D" uid="uid://by3uhmu3pvrnm" path="res://assets/textures/generic/button.png" id="1_hbvho"]
+[ext_resource type="FontFile" uid="uid://suh5ym7srtd2" path="res://assets/fonts/seal.ttf" id="1_nohgc"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0b4yc"]
+texture = ExtResource("1_hbvho")
+texture_margin_left = 12.0
+texture_margin_top = 8.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+
+[resource]
+Button/colors/font_color = Color(0.050980393, 0.05490196, 0.05490196, 1)
+Button/fonts/font = ExtResource("1_nohgc")
+Button/styles/normal = SubResource("StyleBoxTexture_0b4yc")
+CheckBox/fonts/font = ExtResource("1_nohgc")
+CheckButton/fonts/font = ExtResource("1_nohgc")
+CodeEdit/fonts/font = ExtResource("1_nohgc")
+ColorPickerButton/fonts/font = ExtResource("1_nohgc")
+FoldableContainer/fonts/font = ExtResource("1_nohgc")
+GraphNodeTitleLabel/fonts/font = ExtResource("1_nohgc")
+ItemList/fonts/font = ExtResource("1_nohgc")
+Label/fonts/font = ExtResource("1_nohgc")
+LineEdit/fonts/font = ExtResource("1_nohgc")
+LinkButton/fonts/font = ExtResource("1_nohgc")
+MenuBar/fonts/font = ExtResource("1_nohgc")
+MenuButton/fonts/font = ExtResource("1_nohgc")
+OptionButton/fonts/font = ExtResource("1_nohgc")
+PopupMenu/fonts/font = ExtResource("1_nohgc")
+PopupMenu/fonts/font_separator = ExtResource("1_nohgc")
+ProgressBar/fonts/font = ExtResource("1_nohgc")
+RichTextLabel/fonts/bold_font = ExtResource("1_nohgc")
+RichTextLabel/fonts/bold_italics_font = ExtResource("1_nohgc")
+RichTextLabel/fonts/italics_font = ExtResource("1_nohgc")
+RichTextLabel/fonts/mono_font = ExtResource("1_nohgc")
+RichTextLabel/fonts/normal_font = ExtResource("1_nohgc")
+TabBar/fonts/font = ExtResource("1_nohgc")
+TabContainer/fonts/font = ExtResource("1_nohgc")
+TextEdit/fonts/font = ExtResource("1_nohgc")
+TooltipLabel/fonts/font = ExtResource("1_nohgc")
+Tree/fonts/font = ExtResource("1_nohgc")
+Tree/fonts/title_button_font = ExtResource("1_nohgc")
+Window/fonts/title_font = ExtResource("1_nohgc")

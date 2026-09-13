@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://e3w70s560p3c"]
+
+[ext_resource type="PackedScene" uid="uid://wy1atvjlfsrt" path="res://scenes/components/windowTemplate_v1.tscn" id="1_msq31"]
+
+[node name="Window2" type="Window" unique_id=513346502]
+disable_3d = true
+transparent_bg = true
+scaling_3d_mode = 5
+canvas_item_default_texture_filter = 0
+oversampling_override = 1.0
+position = Vector2i(0, 36)
+size = Vector2i(500, 198)
+borderless = true
+transparent = true
+popup_window = true
+extend_to_title = true
+
+[node name="FirstScreen" type="Control" parent="." unique_id=2024136067]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Window" parent="FirstScreen" unique_id=1197849922 instance=ExtResource("1_msq31")]
+layout_mode = 1
+
+[node name="RichTextLabel" parent="FirstScreen/Window/Title Bar/ColorRect" parent_id_path=PackedInt32Array(1197849922, 1139891646) index="3" unique_id=1231506686]
+text = "Welcome!"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="FirstScreen" unique_id=1110106484]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -76.0
+offset_top = -68.0
+offset_right = 76.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.50980395)
+theme_override_constants/shadow_outline_size = 0
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+text = "Welcome to...
+"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="FirstScreen" unique_id=277735411]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -197.0
+offset_top = -47.5
+offset_right = 197.0
+offset_bottom = 31.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.50980395)
+theme_override_constants/shadow_outline_size = 0
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/normal_font_size = 48
+text = "POCKETseal"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="FirstScreen" unique_id=310704907]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -84.0
+offset_top = 35.0
+offset_right = 84.0
+offset_bottom = 77.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start"
+
+[editable path="FirstScreen/Window"]

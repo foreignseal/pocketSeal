@@ -11,7 +11,7 @@ content_margin_bottom = 4.0
 bg_color = Color(0, 0, 0, 0.64705884)
 
 [node name="LogItem" type="PanelContainer" unique_id=517263291]
-custom_maximum_size = Vector2(500, -1)
+custom_maximum_size = Vector2(1200, -1)
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -19,13 +19,14 @@ offset_top = -17.0
 offset_right = 58.0
 grow_vertical = 0
 size_flags_horizontal = 2
-size_flags_vertical = 10
+size_flags_vertical = 8
 theme_override_styles/panel = SubResource("StyleBoxFlat_tqhjj")
 script = ExtResource("1_shbry")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=487804977]
-custom_minimum_size = Vector2(50, 0)
+custom_maximum_size = Vector2(350, -1)
 layout_mode = 2
+size_flags_vertical = 8
 theme_override_fonts/normal_font = ExtResource("1_uhplk")
 theme_override_fonts/bold_font = ExtResource("1_uhplk")
 theme_override_fonts/bold_italics_font = ExtResource("1_uhplk")
@@ -36,7 +37,6 @@ theme_override_font_sizes/bold_font_size = 12
 theme_override_font_sizes/bold_italics_font_size = 12
 theme_override_font_sizes/italics_font_size = 12
 theme_override_font_sizes/mono_font_size = 12
-text = "Message"
+text = "This is a test message to check how big this window can become! sadly it seems like it has no end and thus doesnt wrap, which is weird, cuz it should."
 fit_content = true
 scroll_active = false
-autowrap_mode = 1
